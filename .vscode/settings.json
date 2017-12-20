@@ -1,0 +1,17 @@
+{
+  "editor.tabSize": 4,
+  "python.linting.pylintEnabled": true,
+  "python.formatting.provider": "yapf",
+  "python.pythonPath": "/usr/local/Cellar/python3/3.6.3",
+  "python.unitTest.unittestArgs": [
+    "-v",
+    "-s",
+    ".",
+    "-p",
+    "test*.py"
+  ],
+  "python.unitTest.unittestEnabled": false,
+  "python.unitTest.promptToConfigure": false,
+  "python.unitTest.pyTestEnabled": false,
+  "python.unitTest.nosetestsEnabled": false
+}

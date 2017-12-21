@@ -152,5 +152,6 @@ while True:
 # 要理解generator的工作原理，它是在for循环的过程中不断计算出下一个元素，并在适当的条件结束for循环。
 # 对于函数改成的generator来说，遇到return语句或者执行到函数体最后一行语句，就是结束generator的指令，for循环随之结束。
 
+# 可以被next()函数调用并不断返回下一个值的对象称为迭代器：Iterator。
 
 

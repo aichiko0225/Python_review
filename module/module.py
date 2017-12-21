@@ -12,5 +12,14 @@
 # 相同名字的函数和变量完全可以分别存在不同的模块中，因此，我们自己在编写模块时，不必考虑名字会与其他模块冲突。
 # 但是也要注意，尽量不要与内置函数名字冲突。点这里查看Python的所有内置函数。
 
+# 请注意，每一个包目录下面都会有一个__init__.py的文件，这个文件是必须存在的，否则，Python就把这个目录当成普通目录，而不是一个包。
+# __init__.py可以是空文件，也可以有Python代码，因为__init__.py本身就是一个模块，而它的模块名就是mycompany。
+
+from mycompany.abc import add, greeting
+
+print(add(1, 4, lambda x: x*10))
+
+print(greeting('ash-2'))
+
 
 

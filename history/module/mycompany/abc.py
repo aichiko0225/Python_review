@@ -4,8 +4,10 @@ import sys
 
 __author__ = 'ash zhao'
 
+
 def add(x, y, f):
     return f(x) + f(y)
+
 
 def test():
     args = sys.argv
@@ -16,7 +18,8 @@ def test():
     else:
         print('Too many arguments!')
 
-if __name__=='__main__':
+
+if __name__ == '__main__':
     test()
 
 # 作用域
@@ -35,10 +38,14 @@ if __name__=='__main__':
 # 是因为Python并没有一种方法可以完全限制访问private函数或变量，
 # 但是，从编程习惯上不应该引用private函数或变量。
 
+
 def _private_1(name):
     return 'Hello, %s' % name
+
+
 def _private_2(name):
     return 'Hi, %s' % name
+
 
 def greeting(name):
     if len(name) > 3:
@@ -46,5 +53,5 @@ def greeting(name):
     else:
         return _private_2(name)
 
-print(greeting('ash_225'))
 
+print(greeting('ash_225'))

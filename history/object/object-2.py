@@ -4,11 +4,10 @@
 
 # 我们会讨论多重继承、定制类、元类等概念。
 
-
-
-
 # 使用__slots__
 # 但是，如果我们想要限制实例的属性怎么办？比如，只允许对Student实例添加name和age属性。
+from enum import Enum, unique
+from hello import Hello
 
 
 class Student(object):
@@ -16,7 +15,7 @@ class Student(object):
 
     @property
     def score(self):
-         return self._score
+        return self._score
 
     @score.setter
     def score(self, value):
@@ -38,7 +37,6 @@ s.score = 100
 print(s.score)
 print(s.age1)
 
-
 # 多重继承
 # 继承是面向对象编程的一个重要的方式，因为通过继承，子类就可以扩展父类的功能。
 
@@ -54,12 +52,15 @@ print(s.age1)
 class Animal(object):
     pass
 
+
 # 大类:
 class Mammal(Animal):
     pass
 
+
 class Bird(Animal):
     pass
+
 
 # 各种动物:
 # class Dog(Mammal):
@@ -68,15 +69,19 @@ class Bird(Animal):
 # class Bat(Mammal):
 #     pass
 
+
 class Parrot(Bird):
     pass
+
 
 class Ostrich(Bird):
     pass
 
+
 class Runnable(object):
     def run(self):
         print('Running...')
+
 
 class Flyable(object):
     def fly(self):
@@ -86,16 +91,18 @@ class Flyable(object):
 class Dog(Mammal, Runnable):
     pass
 
+
 class Bat(Mammal, Flyable):
     pass
 
-from enum import Enum, unique
 
-Month = Enum('Month', ('Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'))
+Month = Enum('Month', ('Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug',
+                       'Sep', 'Oct', 'Nov', 'Dec'))
+
 
 @unique
 class Weekday(Enum):
-    Sun = 0 # Sun的value被设定为0
+    Sun = 0  # Sun的value被设定为0
     Mon = 1
     Tue = 2
     Wed = 3
@@ -103,11 +110,10 @@ class Weekday(Enum):
     Fri = 5
     Sat = 6
 
+
 # 使用元类
 
 # 动态语言和静态语言最大的不同，就是函数和类的定义，不是编译时定义的，而是运行时动态创建的。
-
-from hello import Hello
 
 h = Hello()
 h.hello()

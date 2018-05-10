@@ -16,6 +16,7 @@ class Student(object):
 
     def get_name(self):
         return self.__name
+
     def get_score(self):
         return self.__score
 
@@ -25,6 +26,7 @@ class Student(object):
         else:
             raise ValueError('bad score')
 
+
 bart = Student('Bart Simpson', 59)
 lisa = Student('Lisa Simpson', 87)
 bart.print_score()
@@ -33,9 +35,11 @@ lisa.print_score()
 # bart.set_score(-1)
 lisa.set_score(99)
 
+
 class Animal(object):
     def fun(self):
         print('Animal is running...')
+
 
 class Dog(Animal):
     def run(self):
@@ -43,6 +47,7 @@ class Dog(Animal):
 
     def eat(self):
         print('Eating meat...')
+
 
 class Cat(Animal):
     def run(self):
@@ -52,9 +57,6 @@ class Cat(Animal):
         print('Eating fish...')
 
 
-
 # 获取对象信息
 
-
 print(type(123))
-

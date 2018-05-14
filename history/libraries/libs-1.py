@@ -26,6 +26,7 @@ import random
 im = Image.open('libraries/WechatIMG10.jpeg')
 # 应用模糊滤镜:
 im2 = im.filter(ImageFilter.BLUR)
+
 # im2.save('weixin.jpg', 'jpeg')
 
 
@@ -33,13 +34,18 @@ im2 = im.filter(ImageFilter.BLUR)
 def randomChar():
     return chr(random.randint(65, 90))
 
+
 # 随机颜色1:
 def rndColor():
-    return (random.randint(64, 255), random.randint(64, 255), random.randint(64, 255))
+    return (random.randint(64, 255), random.randint(64, 255),
+            random.randint(64, 255))
+
 
 # 随机颜色2:
 def rndColor2():
-    return (random.randint(32, 127), random.randint(32, 127), random.randint(32, 127))
+    return (random.randint(32, 127), random.randint(32, 127),
+            random.randint(32, 127))
+
 
 width = 60 * 4
 height = 60
@@ -61,7 +67,3 @@ for t in range(4):
 # 模糊:
 image = image.filter(ImageFilter.BLUR)
 image.save('code.jpg', 'jpeg')
-
-
-
-

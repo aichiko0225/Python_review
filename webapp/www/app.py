@@ -1,5 +1,5 @@
 import logging
-from flask import Flask
+from flask import Flask, request
 from flask import render_template
 
 logging.basicConfig(level=logging.INFO)
@@ -23,6 +23,17 @@ def hello():
 @app.route('/user/<username>')
 def user(username=None):
     return render_template('user/user.html', username=username)
+
+
+@app.route('/login', methods=['POST', 'GET'])
+def login():
+    error = None
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        if username == 'admin' and password == '123456':
+            return render_template('user/user.html', username=username)
+    return render_template('user/form.html', error=error, username=username)
 
 
 if __name__ == '__main__':

@@ -1,6 +1,7 @@
 import logging
-from flask import Flask, request
+from flask import Flask, request, g
 from flask import render_template
+import sqlite3
 
 logging.basicConfig(level=logging.INFO)
 
@@ -39,3 +40,19 @@ def login():
 if __name__ == '__main__':
     app.run(debug=True)
 
+DATABASE = '/path/to/database.db'
+
+
+def connect_db():
+    return sqlite3.connect(DATABASE)
+
+
+@app.before_request
+def before_request():
+    g.db = connect_db()
+
+
+@app.teardown_request
+def teardown_request():
+    if hasattr(g, 'db'):
+        g.db.close()
